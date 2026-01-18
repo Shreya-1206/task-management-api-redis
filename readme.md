@@ -1,10 +1,10 @@
-Task Management API with Redis
+# Task Management API with Redis
 
 A production-style backend API for task management built with Node.js, Express, TypeScript, MongoDB, and Redis caching.
 Features include JWT-based authentication, user-specific CRUD operations for tasks, and caching for improved GET API performance.
 
-🚀 Features
-User Authentication
+## 🚀 Features
+### User Authentication
 
 Register & Login
 
@@ -12,7 +12,7 @@ Password hashing using bcrypt
 
 JWT-based authorization for protected routes
 
-Task Management
+### Task Management
 
 Create, Read, Update, Delete tasks
 
@@ -20,7 +20,7 @@ Tasks are user-specific
 
 Task fields: title, description, status, priority, user
 
-Redis Caching
+### Redis Caching
 
 GET /tasks endpoint uses Redis caching
 
@@ -28,19 +28,19 @@ Cache invalidation on task create, update, delete
 
 TTL-based caching for performance improvement
 
-Clean Architecture
+### Clean Architecture
 
 Loader-based app initialization
 
 Modular controllers, routes, and models
 
-Environment Configuration
+### Environment Configuration
 
 Separate .env file for sensitive information
 
 Easy setup for local development
 
-🗂 Project Structure
+## 📂 Project Structure
 project-root/
 │
 ├─ src/
@@ -56,7 +56,7 @@ project-root/
 ├─ tsconfig.json
 └─ README.md
 
-⚙️ Environment Variables (.env)
+## ⚙️ Environment Variables (.env)
 
 Create a .env file in the root directory:
 
@@ -74,7 +74,7 @@ JWT_SECRET: Secret key for JWT token
 
 REDIS_URL: Redis connection URL
 
-🛠 Setup & Run
+## 🛠 Setup & Run
 1. Clone the repository
 git clone <repository-url>
 cd project-root
@@ -94,7 +94,7 @@ Use Postman, Insomnia, or a React client
 
 Available routes are listed below
 
-📌 API Routes
+## 📌 API Routes
 Auth Routes
 Method	Route	Description
 POST	/auth/register	Register a new user
@@ -105,7 +105,7 @@ POST	/tasks	Create a new task
 GET	/tasks	Get all tasks of logged-in user
 PUT	/tasks/:id	Update a task (ownership check)
 DELETE	/tasks/:id	Delete a task (ownership check)
-🗃 Redis Caching
+## 🗃 Redis Caching
 
 Endpoint Cached: GET /tasks
 
@@ -113,7 +113,7 @@ Cache Key: tasks:user:<userId>
 
 Cache TTL: 60 seconds (configurable)
 
-Cache Workflow
+## Cache Workflow
 
 Middleware checks Redis cache
 
@@ -123,7 +123,7 @@ If cache miss → fetch from MongoDB and store in Redis
 
 Cache Invalidation: On task create, update, delete
 
-📌 Notes
+## 📌 Notes
 
 All APIs are user-specific and protected with JWT
 
